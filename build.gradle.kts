@@ -25,6 +25,6 @@ kotlin {
 tasks.generateJava {
     schemaPaths = mutableListOf("${projectDir}/src/main/resources/schema") // List of directories containing schema files
     packageName = "com.example.dgscodegeninterfaces.generated" // The package name to use to generate sources
-    generateClientv2 = true // Enable generating the type safe query API
+    generateClient = true // Enable generating the type safe query API
     generateDataTypes = true
 }

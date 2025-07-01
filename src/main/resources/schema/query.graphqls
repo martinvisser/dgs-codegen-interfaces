@@ -1,0 +1,28 @@
+type Query {
+    profile: Profile
+}
+
+type Profile {
+    id: ID!
+    accounts: [Account!]!
+}
+
+interface Account {
+    id: ID!
+    name: String!
+    balance: Float!
+}
+
+type PaymentAccount implements Account {
+    id: ID!
+    name: String!
+    balance: Float!
+    currency: String!
+}
+
+type SavingsAccount implements Account {
+    id: ID!
+    name: String!
+    balance: Float!
+    interestRate: Float!
+}

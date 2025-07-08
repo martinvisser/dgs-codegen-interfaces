@@ -4,23 +4,27 @@ type Query {
 
 type Profile {
     id: ID!
-    accounts: [Account!]!
+    agreements: [Agreement!]!
 }
 
-interface Account {
+interface Agreement {
+    id: ID!
+}
+
+interface Account implements Agreement {
     id: ID!
     name: String!
     balance: Float!
 }
 
-type PaymentAccount implements Account {
+type PaymentAccount implements Agreement & Account {
     id: ID!
     name: String!
     balance: Float!
     currency: String!
 }
 
-type SavingsAccount implements Account {
+type SavingsAccount implements Agreement & Account {
     id: ID!
     name: String!
     balance: Float!
